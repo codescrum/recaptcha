@@ -11,7 +11,7 @@ describe Recaptcha::ClientHelper do
 
   describe "noscript" do
     it "does not add noscript tags when noscript is given" do
-      recaptcha_tags(noscript: false).wont_include "noscript"
+      recaptcha_tags(:noscript => false).wont_include "noscript"
     end
 
     it "does not add noscript tags" do
@@ -20,7 +20,7 @@ describe Recaptcha::ClientHelper do
   end
 
   it "can include size" do
-    html = recaptcha_tags(size: 10)
+    html = recaptcha_tags(:size => 10)
     html.must_include("data-size=\"10\"")
   end
 
@@ -32,12 +32,12 @@ describe Recaptcha::ClientHelper do
   end
 
   it "includes id as div attribute" do
-    html = recaptcha_tags(id: 'my_id')
+    html = recaptcha_tags(:id => 'my_id')
     html.must_include(" id=\"my_id\"")
   end
 
   it "does not include <script> tag when setting script: false" do
-    html = recaptcha_tags(script: false)
+    html = recaptcha_tags(:script => false)
     html.wont_include("<script")
   end
 
@@ -54,12 +54,12 @@ describe Recaptcha::ClientHelper do
     end
 
     it "includes id as button attribute" do
-      html = invisible_recaptcha_tags(id: 'my_id')
+      html = invisible_recaptcha_tags(:id => 'my_id')
       html.must_include(" id=\"my_id\"")
     end
 
     it "does not include <script> tag when setting script: false" do
-      html = invisible_recaptcha_tags(script: false)
+      html = invisible_recaptcha_tags(:script => false)
       html.wont_include("<script")
     end
   end

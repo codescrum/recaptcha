@@ -9,8 +9,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if verify_recaptcha(model: @user, message: 'Error in passing CAPTCHA.') && @user.save
-      redirect_to users_path, notice: "Saved"
+    if verify_recaptcha(:model => @user, :message => 'Error in passing CAPTCHA.') && @user.save
+      redirect_to users_path, :notice => "Saved"
     else
       render 'edit'
     end

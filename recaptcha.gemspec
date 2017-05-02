@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
 
   s.files       = `git ls-files lib README.md CHANGELOG.md LICENSE`.split("\n")
 
-  s.add_runtime_dependency "json"
+  s.add_runtime_dependency "json_pure", "1.8.0"
   s.add_development_dependency "mocha"
   s.add_development_dependency "rake"
   s.add_development_dependency "activesupport"

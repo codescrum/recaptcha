@@ -4,9 +4,9 @@ class CaptchaController < ApplicationController
 
   def create
     if verify_recaptcha
-      render text: 'YES'
+      render :text => 'YES'
     else
-      render text: 'NO'
+      render :text => 'NO'
     end
   end
 end
