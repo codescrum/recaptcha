@@ -2,6 +2,7 @@ require 'recaptcha/configuration'
 require 'recaptcha/client_helper'
 require 'recaptcha/verify'
 require 'uri'
+require 'uri_pre192'
 require 'net/http'
 
 module Recaptcha
